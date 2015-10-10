@@ -1,0 +1,23 @@
+From: Enrico Tassi <gares@fettunta.org>
+Date: Sun, 20 Oct 2013 18:40:13 +0200
+Subject: Add paths for luajit only .lua files
+
+---
+ src/luaconf.h | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/src/luaconf.h b/src/luaconf.h
+index 9e2e6f2..d822b68 100644
+--- a/src/luaconf.h
++++ b/src/luaconf.h
+@@ -43,7 +43,9 @@
+ #define LUA_XCPATH
+ #endif
+ #define LUA_PATH_DEFAULT \
+-  "./?.lua;" LUA_JDIR"?.lua;" LUA_LDIR"?.lua;" LUA_LDIR"?/init.lua" LUA_XPATH
++  "./?.lua;" LUA_JDIR"?.lua;" LUA_LDIR"?.lua;" LUA_LDIR"?/init.lua" LUA_XPATH \
++  ";" LUA_XROOT "lib/" DEB_HOST_MULTIARCH "/lua/jit/?.lua;" \
++  LUA_XROOT "lib/" DEB_HOST_MULTIARCH "/lua/jit/?/init.lua"
+ #define LUA_CPATH_DEFAULT \
+   "./?.so;" LUA_CDIR"?.so;" LUA_XCPATH LUA_CDIR"loadall.so"
+ #endif

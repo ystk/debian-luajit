@@ -1,0 +1,21 @@
+From: Enrico Tassi <gares@fettunta.org>
+Date: Sun, 20 Oct 2013 18:33:56 +0200
+Subject: INSTALL_CMOD must be multiarch aware
+
+---
+ etc/luajit.pc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/etc/luajit.pc b/etc/luajit.pc
+index a2f59c2..5c21ce1 100644
+--- a/etc/luajit.pc
++++ b/etc/luajit.pc
+@@ -15,7 +15,7 @@ libname=luajit-${abiver}
+ includedir=${prefix}/include/luajit-${majver}.${minver}
+ 
+ INSTALL_LMOD=${prefix}/share/lua/${abiver}
+-INSTALL_CMOD=${prefix}/lib/lua/${abiver}
++INSTALL_CMOD=${prefix}/lib/${deb_host_multiarch}/lua/${abiver}
+ 
+ Name: LuaJIT
+ Description: Just-in-time compiler for Lua

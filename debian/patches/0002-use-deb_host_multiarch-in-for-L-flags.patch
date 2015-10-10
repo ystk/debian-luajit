@@ -1,0 +1,28 @@
+From: Enrico Tassi <gares@fettunta.org>
+Date: Wed, 18 Sep 2013 00:07:37 +0200
+Subject: use deb_host_multiarch in for -L flags
+
+---
+ etc/luajit.pc | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/etc/luajit.pc b/etc/luajit.pc
+index 5a982a6..a2f59c2 100644
+--- a/etc/luajit.pc
++++ b/etc/luajit.pc
+@@ -1,3 +1,6 @@
++# deb_host_multiarch properly set by Debian package build
++#deb_host_multiarch=x86_64-linux-gnu
++
+ # Package information for LuaJIT to be used by pkg-config.
+ majver=2
+ minver=0
+@@ -7,7 +10,7 @@ abiver=5.1
+ 
+ prefix=/usr/local
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
++libdir=${exec_prefix}/lib/${deb_host_multiarch}
+ libname=luajit-${abiver}
+ includedir=${prefix}/include/luajit-${majver}.${minver}
+ 
