@@ -1,3 +1,11 @@
+luajit (2.0.3+dfsg-3+deb8u1) jessie-security; urgency=high
+
+  * Non-maintainer upload by the ELTS Team. 
+  * CVE-2020-15890
+    fix for out-of-bounds read 
+ 
+ -- Thorsten Alteholz <debian@alteholz.de>  Sun, 26 Jul 2020 20:03:02 +0200
+
 luajit (2.0.3+dfsg-3) unstable; urgency=medium
 
   * Fix FTBFS when /sbin is not in $PATH (Closes: 744917) 
